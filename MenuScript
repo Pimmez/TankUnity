@@ -1,0 +1,62 @@
+
+public class MenuScript : MonoBehaviour {
+
+	public Canvas quitMenu;
+	public Button startText;
+	public Button exitText;
+	public Button Controls;
+	public Canvas quitControls;
+	public Button Got;
+
+	// Use this for initialization
+	void Start () 
+	{
+		quitMenu = quitMenu.GetComponent<Canvas> ();
+		quitMenu = quitMenu.GetComponent<Canvas> ();
+		startText = startText.GetComponent<Button> ();
+		exitText = exitText.GetComponent<Button> ();
+		Controls = Controls.GetComponent<Button> ();
+		Got = Got.GetComponent<Button> ();
+		quitMenu.enabled = false;
+		quitControls.enabled = false;
+	}
+
+	public void ExitPress()
+	{
+		quitMenu.enabled = true;
+		quitControls.enabled = false;
+		startText.enabled = false;
+		exitText.enabled = false;
+		Controls.enabled = false;
+	}
+
+	public void ControlsEnabled()
+	{
+		quitControls.enabled = true;
+		quitMenu.enabled = false;
+		startText.enabled = false;
+		exitText.enabled = false;
+		Controls.enabled = false;
+	}
+
+	public void NoPress()
+	{
+		quitMenu.enabled = false;
+		quitControls.enabled = false;
+		startText.enabled = true;
+		exitText.enabled = true;
+		Controls.enabled = true;
+	}
+
+	public void StartLevel()
+	{
+		Application.LoadLevel ("map1");
+
+	}
+
+	public void ExitGame()
+	{
+		Application.Quit ();
+	}
+
+}
